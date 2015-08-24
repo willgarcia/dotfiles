@@ -1,0 +1,10 @@
+[push]
+	default = simple
+[user]
+	name = William GARCIA
+	email = garcia.rodriguez.william@gmail.com
+[core]
+	excludesfile = /.gitignore_global
+	editor = /usr/bin/nano
+[help]
+	autocorrect = 10
