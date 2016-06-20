@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git enhancd)
+plugins=(git enhancd zsh-peco-history)
 
 # User configuration
 
@@ -79,21 +79,9 @@ export SSH_KEY_PATH="~/.ssh/id_dsa.pub"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-CDPATH=.:~:~/workspace/
-
-capture(){ 	
-  local FILE	        
-  FILE=$(mktemp -t capture).png
-		    
-  screencapture -t png $* $FILE
-  open -a Preview $FILE
-
-  echo $FILE
-}
+CDPATH=.:~:~/Workspace/*
 
 # enhancd
-if [ -f "/Users/williamgarcia/.enhancd/zsh/enhancd.zsh" ]; then
-ENHANCD_FILTER=~/workspace/:peco; export ENHANCD_FILTER
-	source "/Users/williamgarcia/.enhancd/zsh/enhancd.zsh"
-fi
+ENHANCD_FILTER=~/Workspace/:peco; export ENHANCD_FILTER
+source "$(pwd)/.enhancd/init.sh"
 
